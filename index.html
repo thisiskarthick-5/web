@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeSync — Collaborative Web IDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Scroll animation -->
+  <script>
+    document.addEventListener("scroll", () => {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 80) {
+          el.classList.add("active");
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="bg-black text-slate-100 antialiased">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-black/70 backdrop-blur border-b border-neutral-800">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+
+    <div class="flex items-center gap-3 text-lg font-semibold">
+      <img src="https://img.icons8.com/ios-filled/50/22c55e/code.png" class="w-6 h-6" />
+      <span class="text-[color:var(--green)]">CodeSync</span>
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-sm text-slate-400">
+      <a class="nav-link" href="#why">Why</a>
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#collaboration">Collaboration</a>
+      <a class="nav-link" href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-40 pb-32 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+
+  <div class="reveal">
+    <span class="badge-red">Modern collaborative IDE</span>
+
+    <h1 class="text-6xl font-semibold leading-tight mt-6 mb-8">
+      A workspace that lets you work<br />
+      both individually and collaboratively
+    </h1>
+
+    <p class="text-slate-400 text-lg max-w-xl mb-12">
+      CodeSync is a browser-based IDE built for real-time collaboration,
+      focused thinking, and learning together — without overwhelming tools.
+    </p>
+
+    <a class="cta-red">
+      Create workspace →
+    </a>
+
+    <p class="text-sm text-slate-500 mt-4">
+      No installs · Works on any device · Built for teams & learners
+    </p>
+  </div>
+
+  <!-- Collaborative Image -->
+  <div class="reveal relative">
+    <div class="glow-red -top-16 -left-16"></div>
+    <img
+      src="img/wmremove-transformed.jpeg"
+      class="rounded-3xl border border-neutral-800 shadow-2xl"
+      alt="Collaborative workspace"
+    />
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="section">
+
+  <h2 class="section-title reveal">Why CodeSync exists</h2>
+  <p class="section-desc reveal">
+    Most IDEs optimize for speed and shortcuts. CodeSync is built for
+    understanding, discussion, and shared problem-solving.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-12 mt-20">
+
+    <div class="card reveal">
+      <img src="https://img.icons8.com/ios-filled/100/22c55e/brain.png" class="w-12 mb-6" />
+      <h3>Thinking-first design</h3>
+      <p>
+        CodeSync encourages clarity before complexity. Understand the logic,
+        not just the syntax.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <img src="https://img.icons8.com/ios-filled/100/22c55e/conference.png" class="w-12 mb-6" />
+      <h3>Built for collaboration</h3>
+      <p>
+        Work together in real time inside one shared workspace — no screen
+        sharing, no friction.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <img src="https://img.icons8.com/ios-filled/100/22c55e/learning.png" class="w-12 mb-6" />
+      <h3>Learning-friendly</h3>
+      <p>
+        Ideal for students, mentors, hackathons, and teams that value learning
+        while building.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section">
+  <h2 class="section-title reveal">
+    Powerful features for seamless collaboration
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-20 items-start mt-20">
+
+    <!-- Feature Descriptions -->
+    <div class="space-y-8 reveal">
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Integrated Terminal</h3>
+        <p class="text-slate-400 text-lg">
+          Run commands, test code, and manage projects without leaving the IDE.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Zero Latency Collaboration</h3>
+        <p class="text-slate-400 text-lg">
+          Every participant sees changes instantly. No delays, no conflicts — pure real-time coding.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Voice & Video Chat</h3>
+        <p class="text-slate-400 text-lg">
+          Communicate directly inside the workspace for faster problem-solving and brainstorming.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Collab & Individual Workspaces</h3>
+        <p class="text-slate-400 text-lg">
+          Switch seamlessly between shared projects and private coding spaces.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Shared & Private Folders</h3>
+        <p class="text-slate-400 text-lg">
+          Organize files efficiently — keep private code separate while collaborating on shared projects.
+        </p>
+      </div>
+    </div>
+
+    <!-- Ultra-Realistic IDE Mock - Extended Code -->
+    <div class="editor-mock reveal relative bg-neutral-900 rounded-xl shadow-2xl font-mono text-sm text-slate-300 overflow-hidden">
+
+    <!-- Folder bar -->
+    <div class="flex items-center gap-2 px-4 py-2 bg-neutral-800 border-b border-neutral-700 text-xs text-slate-400">
+        <span class="bg-blue-700/30 px-2 py-0.5 rounded">project1</span>
+        <span class="bg-green-700/30 px-2 py-0.5 rounded">shared</span>
+        <span class="bg-yellow-700/30 px-2 py-0.5 rounded">private</span>
+    </div>
+
+    <!-- Editor -->
+    <div class="overflow-auto h-96 relative p-4">
+        <div class="flex">
+        <!-- Line numbers gutter -->
+        <div class="pr-4 text-slate-500 select-none text-right">
+            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+            <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+            <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+            <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+            <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
+        </div>
+
+        <!-- Code content -->
+        <div class="flex-1 space-y-1">
+            <div><span class="text-green-400">// Collaborative IDE Demo</span></div>
+            <div><span class="text-blue-400">function</span> launchProject() {</div>
+            <div>    console.log(<span class="text-yellow-300">"Welcome to CodeSync!"</span>);</div>
+            <div>    initWorkspace();</div>
+            <div>    loadSharedFiles();</div>
+            <div>}</div>
+            <div><span class="text-purple-400">// Collaborators online</span></div>
+            <div><span class="text-blue-400">const</span> users = [<span class="text-yellow-300">"Alice"</span>, <span class="text-yellow-300">"Bob"</span>, <span class="text-yellow-300">"Charlie"</span>, <span class="text-yellow-300">"You"</span>];</div>
+            <div>users.forEach(user =&gt; console.log(`${user} is ready.`));</div>
+            <div><span class="text-purple-400">// Shared & private folders</span></div>
+            <div><span class="text-blue-400">const</span> folders = {</div>
+            <div class="bg-green-900/20 rounded px-1">    shared: [<span class="text-yellow-300">"project1"</span>, <span class="text-yellow-300">"designs"</span>, <span class="text-yellow-300">"readme.md"</span>],</div>
+            <div class="bg-yellow-900/20 rounded px-1">    private: [<span class="text-yellow-300">"notes"</span>, <span class="text-yellow-300">"drafts"</span>, <span class="text-yellow-300">"temp.js"</span>]</div>
+            <div>};</div>
+            <div class="bg-green-900/20 rounded px-1">console.log("New line added by Bob");</div>
+            <div class="bg-yellow-900/20 rounded px-1">const temp = "Private edit";</div>
+            <div><span class="text-purple-400">// Terminal commands simulation</span></div>
+            <div>runCommand(<span class="text-yellow-300">"npm install"</span>);</div>
+            <div>runCommand(<span class="text-yellow-300">"npm start"</span>);</div>
+            <div><span class="text-purple-400">// Live edits</span></div>
+            <div class="bg-green-900/20 rounded px-1">updateUI(<span class="text-yellow-300">"header"</span>);</div>
+            <div class="bg-green-900/20 rounded px-1">addFeature(<span class="text-yellow-300">"voiceChat"</span>);</div>
+            <div class="bg-yellow-900/20 rounded px-1">debug(<span class="text-yellow-300">"privateFunction"</span>);</div>
+        </div>
+        </div>
+
+        <!-- Multiple cursors -->
+        <div class="absolute w-1 h-5 bg-red-400 animate-blink" style="top: 36px; left: 62px;"></div>
+        <div class="absolute w-1 h-5 bg-blue-400 animate-blink" style="top: 90px; left: 62px;"></div>
+        <div class="absolute w-1 h-5 bg-green-400 animate-blink" style="top: 160px; left: 62px;"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cursor animation -->
+<style>
+@keyframes blink {
+  0%,50%,100% { opacity: 1; }
+  25%,75% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+</style>
+
+<!-- COLLABORATION -->
+<section id="collaboration" class="section text-center mt-32">
+  <h2 class="section-title reveal">Not just an editor — a shared thinking space</h2>
+  <p class="section-desc text-xl reveal mt-4">
+    Whether you’re learning alone or building together, CodeSync adapts to how humans actually work.
+  </p>
+
+  <div class="mt-12 grid md:grid-cols-2 gap-16 items-center reveal">
+
+    <!-- Visual mock of collab workspace -->
+    <div class="bg-neutral-900 p-6 rounded-xl shadow-2xl relative overflow-hidden">
+      
+      <!-- Multiple cursors -->
+      <div class="absolute w-1 h-5 bg-red-400 animate-blink" style="top:40px; left:50px;"></div>
+      <div class="absolute w-1 h-5 bg-blue-400 animate-blink" style="top:70px; left:50px;"></div>
+      <div class="absolute w-1 h-5 bg-green-400 animate-blink" style="top:100px; left:50px;"></div>
+
+      <!-- Mini chat -->
+      <div class="absolute bottom-4 right-4 bg-neutral-800 p-2 rounded-lg w-52 text-xs">
+        <div class="text-blue-400"><strong>Alice:</strong> Added the header component</div>
+        <div class="text-green-400"><strong>Bob:</strong> Fixed CSS bug</div>
+        <div class="text-yellow-300"><strong>You:</strong> Working on terminal integration</div>
+      </div>
+
+      <pre class="text-slate-300 font-mono text-sm">
+<span class="text-green-400">// Real-time collaborative code</span>
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+const users = ["Alice", "Bob", "You"];
+users.forEach(greet);
+      </pre>
+    </div>
+
+    <!-- Description -->
+    <div class="space-y-6 text-left">
+      <h3 class="text-2xl font-semibold">Collaborate like never before</h3>
+      <p class="text-slate-400 text-lg">
+        See live edits, multiple cursors, and voice/video chat in the same workspace.  
+        Work together on shared folders while keeping private areas secure.  
+        Learning and building happens naturally, in real time.
+      </p>
+      <div class="flex gap-4 mt-4">
+        <span class="px-3 py-1 bg-blue-700/30 rounded text-xs">Live Cursors</span>
+        <span class="px-3 py-1 bg-green-700/30 rounded text-xs">Voice & Video</span>
+        <span class="px-3 py-1 bg-yellow-700/30 rounded text-xs">Shared & Private Folders</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="about" class="border-t border-neutral-800 bg-black py-16">
+  <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-12 text-sm">
+
+    <div>
+      <h4 class="font-semibold text-[color:var(--green)] mb-4">CodeSync</h4>
+      <p class="text-slate-500">
+        A modern collaborative IDE built for clarity,
+        learning, and real teamwork.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-medium mb-4">Product</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li>Features</li>
+        <li>Docs</li>
+        <li>Pricing</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-medium mb-4">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li>About</li>
+        <li>Contact</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-medium mb-4">Legal</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li>Privacy Policy</li>
+        <li>Terms of Service</li>
+        <li>Security</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="text-center text-xs text-slate-600 mt-12">
+    © 2026 CodeSync. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
